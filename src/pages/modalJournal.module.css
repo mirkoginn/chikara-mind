@@ -1,0 +1,666 @@
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  overflow-y: auto;
+
+  z-index: 1000;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+  width: 100%;
+  max-width: 850px;
+
+  height: 80vh;
+  max-height: 750px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: rgba(14, 39, 29, 0.97);
+
+  border: 1px solid rgba(198, 169, 107, 0.3);
+  border-radius: 20px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55);
+
+  animation: modalOpen 0.3s ease;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-shrink: 0;
+
+  padding: 25px 30px;
+
+  border-bottom: 1px solid rgba(243, 239, 229, 0.08);
+}
+
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.titleContainer > svg {
+  color: #c6a96b;
+}
+
+
+.label {
+  margin: 0 0 3px;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.6rem;
+
+  letter-spacing: 0.2em;
+
+  color: #c6a96b;
+}
+
+
+.header h2 {
+  margin: 0;
+
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: #f3efe5;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.closeButton {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  border: 1px solid rgba(243, 239, 229, 0.1);
+  border-radius: 50%;
+
+  color: rgba(243, 239, 229, 0.6);
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.closeButton:hover {
+  background: rgba(198, 169, 107, 0.1);
+
+  color: #c6a96b;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================
+   JOURNAL INFO
+========================= */
+
+.journalInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-shrink: 0;
+
+  padding: 15px 30px;
+
+  background: rgba(5, 20, 14, 0.25);
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.7rem;
+
+  color: rgba(243, 239, 229, 0.45);
+}
+
+
+.journalInfo span:first-child {
+  color: #c6a96b;
+}
+
+
+/* =========================
+   ENTRIES CONTAINER
+========================= */
+
+.entriesContainer {
+  flex: 1;
+
+  min-height: 0;
+
+  padding: 25px 30px 30px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+/* SCROLLBAR */
+
+.entriesContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.entriesContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.entriesContainer::-webkit-scrollbar-thumb {
+  background: rgba(198, 169, 107, 0.25);
+
+  border-radius: 10px;
+}
+
+
+.entriesContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(198, 169, 107, 0.45);
+}
+
+
+/* =========================
+   JOURNAL MESSAGE
+========================= */
+
+.journalMessage {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin: 0 0 25px;
+  padding: 5px 5px 22px;
+
+  display: block;
+
+  border-bottom: 1px solid rgba(198, 169, 107, 0.15);
+}
+
+
+.journalMessageLabel {
+  display: block;
+
+  margin: 0 0 10px;
+  padding: 0;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.6rem;
+  line-height: 1.5;
+
+  letter-spacing: 0.2em;
+
+  color: #c6a96b;
+}
+
+
+.journalMessageTitle {
+  display: block;
+
+  width: 100%;
+
+  margin: 0 0 10px;
+  padding: 0;
+
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.5;
+
+  color: #f3efe5;
+
+  white-space: normal;
+  overflow: visible;
+}
+
+
+.journalMessageText {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.7;
+
+  color: rgba(243, 239, 229, 0.5);
+
+  white-space: normal;
+  overflow: visible;
+}
+
+
+/* =========================
+   JOURNAL ENTRY
+========================= */
+
+.entry {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-bottom: 15px;
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(243, 239, 229, 0.08);
+  border-radius: 14px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+
+.entry:hover {
+  background: rgba(198, 169, 107, 0.04);
+
+  border-color: rgba(198, 169, 107, 0.2);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   ENTRY HEADER
+========================= */
+
+.entryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+
+.date {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.65rem;
+
+  color: rgba(243, 239, 229, 0.45);
+}
+
+
+.dot {
+  color: #c6a96b;
+}
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.deleteButton {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  border: none;
+  border-radius: 50%;
+
+  color: rgba(243, 239, 229, 0.35);
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.deleteButton:hover {
+  background: rgba(180, 70, 70, 0.15);
+
+  color: #d77a7a;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   ENTRY CONTENT
+========================= */
+
+.entryContent {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+}
+
+
+.mood {
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(198, 169, 107, 0.08);
+
+  border: 1px solid rgba(198, 169, 107, 0.15);
+  border-radius: 50%;
+
+  font-size: 1.6rem;
+}
+
+
+.entryContent p {
+  margin: 3px 0 0;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.7;
+
+  color: rgba(243, 239, 229, 0.8);
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   EMPTY JOURNAL
+========================= */
+
+.emptyJournal {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: rgba(243, 239, 229, 0.4);
+}
+
+
+.emptyJournal svg {
+  margin-bottom: 15px;
+
+  color: #c6a96b;
+}
+
+
+.emptyJournal h3 {
+  margin: 0 0 8px;
+
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+
+  color: #f3efe5;
+}
+
+
+.emptyJournal p {
+  margin: 0;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.6;
+
+  color: rgba(243, 239, 229, 0.45);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.stickyFooter {
+  width: 100%;
+
+  flex-shrink: 0;
+
+  padding: 15px 30px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  background: rgba(14, 39, 29, 0.96);
+
+  border-top: 1px solid rgba(243, 239, 229, 0.08);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  z-index: 10;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 10px 20px;
+
+  background: transparent;
+
+  border: 1px solid rgba(198, 169, 107, 0.4);
+  border-radius: 30px;
+
+  color: #c6a96b;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.75rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.backButton svg {
+  flex-shrink: 0;
+}
+
+
+.backButton:hover {
+  background: #c6a96b;
+
+  color: #173326;
+
+  transform: translateX(-3px);
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes modalOpen {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .overlay {
+    padding: 15px;
+  }
+
+
+  .modal {
+    height: 90vh;
+    max-height: 90vh;
+
+    border-radius: 16px;
+  }
+
+
+  .header {
+    padding: 20px;
+  }
+
+
+  .header h2 {
+    font-size: 1.4rem;
+  }
+
+
+  .journalInfo {
+    padding: 12px 20px;
+  }
+
+
+  .journalInfo span:last-child {
+    display: none;
+  }
+
+
+  .entriesContainer {
+    padding: 20px;
+  }
+
+
+  .journalMessage {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  .journalMessageTitle {
+    font-size: 1.15rem;
+  }
+
+
+  .entry {
+    padding: 16px;
+  }
+
+
+  .entryContent {
+    gap: 12px;
+  }
+
+
+  .mood {
+    min-width: 42px;
+    width: 42px;
+    height: 42px;
+
+    font-size: 1.4rem;
+  }
+
+
+  .stickyFooter {
+    padding: 12px 20px;
+  }
+
+}

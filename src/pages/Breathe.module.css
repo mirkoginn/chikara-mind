@@ -1,0 +1,353 @@
+/* =========================
+   PAGE
+========================= */
+
+.breathe {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  background-color: #0b2018;
+  background-image:
+    linear-gradient(
+      rgba(11, 32, 24, 0.78),
+      rgba(11, 32, 24, 0.94)
+    ),
+    url("/img/background.png");
+  background-size: cover;
+  background-position: center;
+
+  color: #f3efe5;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.breathe,
+.breathe * {
+  box-sizing: border-box;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 24px 32px;
+}
+
+.backButton {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 10px 16px;
+
+  border: 1px solid rgba(198, 169, 107, 0.4);
+  border-radius: 999px;
+
+  background: rgba(11, 32, 24, 0.65);
+  color: #f3efe5;
+
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.music {
+  min-width: 0;
+  padding: 10px 14px;
+
+  border: 1px solid rgba(198, 169, 107, 0.3);
+  border-radius: 999px;
+
+  background: rgba(11, 32, 24, 0.8);
+}
+
+.music select {
+  max-width: 100%;
+  padding: 4px;
+
+  border: none;
+  background: transparent;
+  color: #f3efe5;
+
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.music option {
+  background: #0b2018;
+  color: #f3efe5;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 0 48px;
+
+  text-align: center;
+}
+
+.eyebrow {
+  color: #c6a96b;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+}
+
+.heading h1 {
+  margin: 16px 0 12px;
+
+  font-family: "Zen Old Mincho", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+}
+
+.heading p {
+  margin: 0;
+
+  color: rgba(243, 239, 229, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* =========================
+   BREATHING CIRCLE
+========================= */
+
+.circleStage {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  width: 320px;
+  height: 320px;
+  margin: 30px auto;
+}
+
+.outerRing {
+  position: absolute;
+  inset: 10px;
+
+  border: 1px solid var(--breath-color);
+  border-radius: 50%;
+  opacity: 0.18;
+}
+
+.circle {
+  display: grid;
+  place-items: center;
+
+  width: 210px;
+  height: 210px;
+
+  border: 1px solid var(--breath-color);
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(243, 239, 229, 0.1),
+    rgba(243, 239, 229, 0.02)
+  );
+
+  box-shadow:
+    0 0 45px rgba(198, 169, 107, 0.08),
+    inset 0 0 35px rgba(243, 239, 229, 0.04);
+}
+
+.animated {
+  animation: breathing 8s linear infinite;
+}
+
+@keyframes breathing {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.35);
+  }
+}
+
+.circleText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--breath-color);
+}
+
+.circleText span {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.8rem;
+}
+
+.circleText strong {
+  font-size: 1rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================
+   SESSION CONTROLS
+========================= */
+
+.controls {
+  min-height: 160px;
+}
+
+.hint {
+  margin: 0 0 22px;
+
+  color: rgba(243, 239, 229, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.timer {
+  margin-bottom: 12px;
+
+  color: #f3efe5;
+  font-size: 2rem;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 46px;
+  padding: 10px 14px;
+
+  border: 1px solid rgba(243, 239, 229, 0.22);
+  border-radius: 10px;
+  background: rgba(11, 32, 24, 0.65);
+}
+
+.duration span {
+  color: rgba(243, 239, 229, 0.65);
+  font-size: 0.75rem;
+}
+
+.duration select {
+  border: none;
+  background: transparent;
+  color: #f3efe5;
+
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.duration option {
+  background: #0b2018;
+  color: #f3efe5;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 46px;
+  padding: 12px 24px;
+
+  border: 1px solid #c6a96b;
+  border-radius: 10px;
+
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background: #c6a96b;
+  color: #0b2018;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #e0c58f;
+}
+
+.breathe button:focus-visible,
+.breathe select:focus-visible {
+  outline: 2px solid #f3efe5;
+  outline-offset: 4px;
+}
+
+@media (hover: hover) {
+  .primaryButton:hover {
+    background: #dec28b;
+  }
+
+  .secondaryButton:hover,
+  .backButton:hover {
+    background: rgba(198, 169, 107, 0.15);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .topbar {
+    padding: 18px;
+  }
+
+  .content {
+    padding-top: 22px;
+  }
+
+  .eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+  }
+
+  .heading p {
+    font-size: 0.82rem;
+  }
+
+  .circleStage {
+    width: 270px;
+    height: 270px;
+    margin: 26px auto;
+  }
+
+  .circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .circleText span {
+    font-size: 1.6rem;
+  }
+
+  .hint {
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated {
+    animation: none;
+  }
+}

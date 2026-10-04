@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Zen+Old+Mincho:wght@400;500;600&display=swap");
+
+
+/* =========================
+   NAME INPUT
+========================= */
+
+.nameInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(57, 66, 56, 0.25);
+  border-radius: 3px;
+  outline: none;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  color: #394238;
+
+  transition: border-color 0.3s ease;
+}
+
+.nameInput:focus {
+  border-color: #66705c;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.continueButton {
+  padding: 14px 45px;
+  margin-top: 30px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #394238;
+  color: #f3efe5;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.continueButton:hover {
+  transform: translateY(-2px);
+}
+
+.continueButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================
+   ONBOARDING - DESKTOP
+========================= */
+
+.onboarding {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+
+  /* IMMAGINE DESKTOP */
+  background-image: url("/img/preload.dsk.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: "Noto Sans JP", sans-serif;
+  color: #242722;
+}
+
+
+/* =========================
+   CONTENT CARD
+========================= */
+
+.questionCard {
+  width: 100%;
+  max-width: 550px;
+  box-sizing: border-box;
+
+  padding: 45px 50px;
+
+  background: rgba(248, 246, 239, 0.78);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  box-shadow:
+    0 20px 60px rgba(35, 45, 38, 0.12);
+
+  text-align: center;
+
+  animation: questionAppear 0.7s ease-out;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress {
+  margin-bottom: 25px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+
+  color: #66705c;
+}
+
+
+/* =========================
+   QUESTION
+========================= */
+
+.question {
+  margin: 0 0 35px;
+
+  font-family: "Zen Old Mincho", serif;
+
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: #242722;
+}
+
+
+/* =========================
+   ANSWERS
+========================= */
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+/* =========================
+   ANSWER BUTTON
+========================= */
+
+.answer {
+  width: 100%;
+  padding: 16px 20px;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  border: 1px solid rgba(57, 66, 56, 0.25);
+  border-radius: 3px;
+
+  color: #394238;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.answer:hover {
+  background: #394238;
+  border-color: #394238;
+  color: #f3efe5;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progressBar {
+  width: 100%;
+  height: 2px;
+  margin-top: 35px;
+
+  background: rgba(57, 66, 56, 0.15);
+
+  overflow: hidden;
+}
+
+.progressValue {
+  height: 100%;
+
+  background: #66705c;
+
+  transition: width 0.5s ease;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes questionAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .onboarding {
+    padding: 20px 15px;
+
+    /* IMMAGINE MOBILE */
+    background-image: url("/img/preload.png");
+
+    /* Mostra tutta l'immagine */
+    background-size: contain;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: #102c20;
+  }
+
+  .questionCard {
+    padding: 35px 22px;
+
+    background: rgba(248, 246, 239, 0.82);
+  }
+
+  .question {
+    font-size: 1.55rem;
+  }
+
+  .answer {
+    padding: 14px 16px;
+
+    font-size: 0.9rem;
+  }
+
+  .nameInput {
+    padding: 14px 16px;
+
+    font-size: 0.95rem;
+  }
+
+  .continueButton {
+    padding: 13px 35px;
+
+    font-size: 0.85rem;
+  }
+}

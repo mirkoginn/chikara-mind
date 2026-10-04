@@ -1,0 +1,292 @@
+/* =========================
+   MAIN CARDS
+========================= */
+
+.cards {
+  flex: 1;
+
+  position: relative;
+  overflow: hidden;
+
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  border-radius: 18px;
+
+  background: rgba(18, 48, 36, 0.85);
+
+  border: 1px solid rgba(198, 169, 107, 0.2);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.cards img {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  inset: 0;
+
+  object-fit: cover;
+
+  z-index: 1;
+
+  transition: transform 0.5s ease;
+}
+
+
+/* =========================
+   DARK GRADIENT
+========================= */
+
+.cards::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(5, 20, 14, 0.9) 0%,
+    rgba(5, 20, 14, 0.35) 55%,
+    rgba(5, 20, 14, 0.05) 100%
+  );
+
+  z-index: 2;
+}
+
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.cards h2 {
+  position: relative;
+  z-index: 3;
+
+  margin: 0;
+  padding: 30px;
+
+  font-family: "Zen Old Mincho", serif;
+
+  font-size: 2rem;
+  font-weight: 500;
+
+  color: #f3efe5;
+
+  letter-spacing: 0.04em;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 3;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cardContent h2 {
+  padding: 0;
+  margin: 0 0 20px;
+
+  font-family: "Zen Old Mincho", serif;
+
+  font-size: 2rem;
+  font-weight: 500;
+
+  color: #f3efe5;
+}
+
+/*CardBuotton*/
+
+.cardButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  padding: 11px 24px;
+
+  border: none;
+  border-radius: 30px;
+
+  background: #e7c36f;
+
+  color: #173326;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cardButton span {
+  font-size: 1.2rem;
+
+  transition: transform 0.3s ease;
+}
+
+.cardButton:hover {
+  transform: translateY(-2px);
+
+  background: #f0d184;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cardButton:hover span {
+  transform: translateX(5px);
+}
+
+.cardButton:active {
+  transform: translateY(0);
+}
+
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.cards:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(198, 169, 107, 0.5);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.cards:hover img {
+  transform: scale(1.05);
+}
+
+/* FOOTER EMOZIONALE */
+
+.underCard {
+  position: relative;
+  width: 100%;
+  height: 230px;
+
+  margin-top: 40px;
+  border-radius: 22px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.underCard img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+/* Oscurisce leggermente l'immagine */
+.underCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(8, 25, 19, 0.48);
+  z-index: 1;
+}
+
+.underCard h2,
+.underCard p {
+  position: relative;
+  z-index: 2;
+}
+
+.underCard h2 {
+  margin: 0 20px 10px;
+
+  font-family: "Zen Old Mincho", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  color: #f1e7cb;
+}
+
+.underCard p {
+  margin: 0 20px;
+
+  font-size: 1rem;
+  letter-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .cards {
+    min-height: 230px;
+  }
+
+  .cards h2 {
+    padding: 22px;
+
+    font-size: 1.6rem;
+  }
+
+}
+/* MOBILE */
+@media (max-width: 768px) {
+  .underCard {
+    height: 180px;
+    margin-top: 25px;
+    border-radius: 16px;
+  }
+
+  .underCard h2 {
+    font-size: 1.5rem;
+  }
+
+  .underCard p {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+}

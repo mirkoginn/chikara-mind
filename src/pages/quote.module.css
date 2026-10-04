@@ -1,0 +1,63 @@
+.quoteCard {
+  width: 380px;
+  min-height: 150px;
+
+  padding: 25px 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: rgba(15, 43, 32, 0.72);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(198, 169, 107, 0.25);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.label {
+  margin: 0 0 15px;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+
+  color: #c6a96b;
+}
+
+.quote {
+  margin: 0;
+
+  font-family: "Zen Old Mincho", serif;
+
+  font-size: 1.15rem;
+  line-height: 1.5;
+
+  color: #f3efe5;
+}
+
+.author {
+  margin: 12px 0 0;
+
+  font-size: 0.75rem;
+
+  color: rgba(243, 239, 229, 0.6);
+
+  text-align: right;
+}
+@media (max-width: 768px) {
+
+  .content {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 30px;
+
+    padding: 50px 0 35px;
+  }
+}
