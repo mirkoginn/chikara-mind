@@ -21,7 +21,7 @@ function Welcome({ onStart }) {
       <div className={styles.content}>
 
         <img
-          src={"/img/logo.png"}
+          src={`${import.meta.env.BASE_URL}img/logo.png`}
           alt="Chikara Mind"
           className={styles.logo}
         />

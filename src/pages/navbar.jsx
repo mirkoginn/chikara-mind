@@ -44,7 +44,7 @@ function Navbar({ name, path, onPathChange, onGoHome }) {
         <div className={styles.brand}>
 
           <img
-            src="/img/logo.png"
+           src={`${import.meta.env.BASE_URL}img/logo.png`}
             alt="Chikara Mind"
             className={styles.logo}
           />

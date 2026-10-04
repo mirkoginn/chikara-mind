@@ -59,14 +59,14 @@ function Home({
         <Cards
           h2="Meditate"
           p="Find your inner balance and take a moment for yourself."
-          imgSrc="/img/meditate.png"
+          src={`${import.meta.env.BASE_URL}img/meditate.png`}
           onClick={onGoMeditate}
         />
 
         <Cards
           h2="Breathe"
           p="Slow down, breathe deeply and reconnect with yourself."
-          imgSrc="/img/breathe.png"
+          src={`${import.meta.env.BASE_URL}img/breathe.png`}
           onClick={onGoBreathe}
         />
       </div>
@@ -79,7 +79,7 @@ function Home({
 
       <UnderCard
         h2="A little further every day."
-        imgSrc="/img/final-card.png"
+        src={`${import.meta.env.BASE_URL}img/final-card.png`}
         p="BODY  •  MIND  •  SOUL"
       />
     </div>

@@ -12,13 +12,13 @@ const exercises = [
     title: "Inner Calm",
     description:
       "Sit comfortably. Relax your shoulders and let your breath flow naturally.",
-    image: "/img/meditation1.png",
+    image: `${import.meta.env.BASE_URL}img/meditation1.png`,
   },
   {
     title: "Tree Balance",
     description:
       "Find a comfortable balance and focus on a steady point. Keep your breathing natural.",
-    image: "/img/meditation2.png",
+    image: `${import.meta.env.BASE_URL}img/meditation2.png`,
   },
 ];
 

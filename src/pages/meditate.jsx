@@ -81,7 +81,7 @@ function Meditate({ user, onPathChange, onGoHome, path }) {
             <div className={styles.imageContainer}>
               <img
                 className={styles.cardImage}
-                src="/img/welcome.png"
+                src={`${import.meta.env.BASE_URL}img/welcome.png`}
                 alt="A peaceful setting for meditation"
               />
 
