@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Welcome from "./pages/Welcome";
+import Welcome from "./pages/welcome";
 import Onboarding from "./pages/Onboarding";
 import Home from "./pages/home";
 import Meditate from "./pages/meditate";
