@@ -3,19 +3,19 @@ import { useEffect, useRef, useState } from "react";
 const tracks = [
   {
     name: "Forest",
-    src: "/audio/forest.mp3",
+    src: `${import.meta.env.BASE_URL}audio/forest.mp3`,
   },
   {
     name: "Rain",
-    src: "/audio/rain.mp3",
+    src: `${import.meta.env.BASE_URL}audio/rain.mp3`,
   },
   {
     name: "Ocean",
-    src: "/audio/ocean.mp3",
+    src: `${import.meta.env.BASE_URL}audio/ocean.mp3`,
   },
   {
     name: "Zen",
-    src: "/audio/zen.mp3",
+    src: `${import.meta.env.BASE_URL}audio/zen.mp3`,
   },
 ];
 
