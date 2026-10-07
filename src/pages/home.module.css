@@ -183,4 +183,18 @@
 
     padding-bottom: 40px;
   }
+  .welcomeSection {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+.content {
+  width: 100%;
+}
+
+.quoteContainer {
+  width: 100%;
+  flex: none;
+  justify-content: flex-start;
+}
 }
