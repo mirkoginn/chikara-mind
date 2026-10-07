@@ -32,7 +32,7 @@ function Home({
           </p>
 
           <h1>
-            Good evening, {user?.name}
+            Good Evening, {user?.name}
           </h1>
 
           <h2>
@@ -57,18 +57,18 @@ function Home({
 
       <div className={styles.cardsContainer}>
         <Cards
-          h2="Meditate"
-          p="Find your inner balance and take a moment for yourself."
-          src={`${import.meta.env.BASE_URL}img/meditate.png`}
-          onClick={onGoMeditate}
-        />
+  h2="Meditate"
+  p="Find your inner balance and take a moment for yourself."
+  imgSrc={`${import.meta.env.BASE_URL}img/meditate.png`}
+  onClick={onGoMeditate}
+/>
 
-        <Cards
-          h2="Breathe"
-          p="Slow down, breathe deeply and reconnect with yourself."
-          src={`${import.meta.env.BASE_URL}img/breathe.png`}
-          onClick={onGoBreathe}
-        />
+<Cards
+  h2="Breathe"
+  p="Slow down, breathe deeply and reconnect with yourself."
+  imgSrc={`${import.meta.env.BASE_URL}img/breathe.png`}
+  onClick={onGoBreathe}
+/>
       </div>
 
       {/* MOOD JOURNAL */}
@@ -78,10 +78,10 @@ function Home({
       {/* FINAL CARD */}
 
       <UnderCard
-        h2="A little further every day."
-        src={`${import.meta.env.BASE_URL}img/final-card.png`}
-        p="BODY  •  MIND  •  SOUL"
-      />
+  h2="A little further every day."
+  imgSrc={`${import.meta.env.BASE_URL}img/final-card.png`}
+  p="BODY  •  MIND  •  SOUL"
+/>
     </div>
   );
 }
