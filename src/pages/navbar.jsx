@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import styles from "./navbar.module.css";
-import ModalJournal from "./modalJournal.jsx";
+import ModalJournal from "./ModalJournal.jsx";
 
 
 function Navbar({ name, path, onPathChange, onGoHome }) {

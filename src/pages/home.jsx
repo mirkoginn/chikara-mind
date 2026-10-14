@@ -1,9 +1,9 @@
-import Navbar from "./navbar.jsx";
+import Navbar from "./Navbar.jsx";
 import styles from "./home.module.css";
-import Cards from "./cards.jsx";
-import Quote from "./quotecard.jsx";
-import MoodJournal from "./moodJournal.jsx";
-import { UnderCard } from "./cards.jsx";
+import Cards from "./Cards.jsx";
+import Quote from "./QuoteCard.jsx";
+import MoodJournal from "./MoodJournal.jsx";
+import { UnderCard } from "./Cards.jsx";
 
 function Home({
   user,

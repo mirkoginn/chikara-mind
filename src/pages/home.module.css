@@ -198,3 +198,8 @@
   justify-content: flex-start;
 }
 }
+@media (max-width: 768px) {
+  .welcomeSection {
+    margin-bottom: 32px;
+  }
+}

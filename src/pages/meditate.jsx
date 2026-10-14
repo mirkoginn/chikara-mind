@@ -1,12 +1,10 @@
 import { useState } from "react";
 
-import Navbar from "./navbar.jsx";
+import Navbar from "./Navbar.jsx";
 import MeditationExercise from "../components/MeditationExercise.jsx";
 
 import styles from "./meditate.module.css";
 
-// Inserisci gli URL completi dei video YouTube in "url".
-// Puoi modificare liberamente titoli e descrizioni.
 const yogaVideos = [
   {
     id: 1,
@@ -40,7 +38,7 @@ const yogaVideos = [
   },
 ];
 
-function Meditate({ user, onPathChange, onGoHome, path }) {
+function Meditate({ user, onPathChange, onGoHome }) {
   const [exerciseOpen, setExerciseOpen] = useState(false);
 
   if (exerciseOpen) {
@@ -54,15 +52,17 @@ function Meditate({ user, onPathChange, onGoHome, path }) {
   return (
     <main className={styles.meditate}>
       <Navbar
-        user={user}
-        path={path}
+        name={user?.name}
+        path={user?.path}
         onPathChange={onPathChange}
         onGoHome={onGoHome}
       />
 
       <div className={styles.container}>
         <header className={styles.header}>
-          <span className={styles.eyebrow}>YOUR MOMENT OF PEACE</span>
+          <span className={styles.eyebrow}>
+            YOUR MOMENT OF PEACE
+          </span>
 
           <h1>Meditate & Move</h1>
 
@@ -85,7 +85,9 @@ function Meditate({ user, onPathChange, onGoHome, path }) {
                 alt="A peaceful setting for meditation"
               />
 
-              <span className={styles.badge}>Meditation</span>
+              <span className={styles.badge}>
+                Meditation
+              </span>
             </div>
 
             <div className={styles.cardContent}>
@@ -106,7 +108,7 @@ function Meditate({ user, onPathChange, onGoHome, path }) {
             </div>
           </article>
 
-          {/* FIVE YOGA VIDEOS */}
+          {/* YOGA VIDEOS */}
           {yogaVideos.map((video, index) => (
             <article className={styles.card} key={video.id}>
               <div
@@ -115,7 +117,9 @@ function Meditate({ user, onPathChange, onGoHome, path }) {
                 }`}
                 aria-hidden="true"
               >
-                <span className={styles.badge}>Yoga · YouTube</span>
+                <span className={styles.badge}>
+                  Yoga · YouTube
+                </span>
 
                 <span className={styles.coverNumber}>
                   {String(index + 1).padStart(2, "0")}
@@ -123,7 +127,9 @@ function Meditate({ user, onPathChange, onGoHome, path }) {
 
                 <span className={styles.playIcon}>▶</span>
 
-                <span className={styles.coverLabel}>MINDFUL MOVEMENT</span>
+                <span className={styles.coverLabel}>
+                  MINDFUL MOVEMENT
+                </span>
               </div>
 
               <div className={styles.cardContent}>

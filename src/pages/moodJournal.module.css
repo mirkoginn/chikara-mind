@@ -320,3 +320,97 @@
   }
 
 }
+/* SAVE CONFIRMATION MODAL */
+
+.savedDialog {
+  box-sizing: border-box;
+  width: min(440px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  margin: auto;
+  padding: 32px;
+  border: 1px solid rgba(168, 195, 154, 0.35);
+  border-radius: 22px;
+  background: #122b20;
+  color: #f3efe5;
+  text-align: center;
+  font-family: inherit;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+}
+
+.savedDialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.savedIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: rgba(168, 195, 154, 0.15);
+  color: #a8c39a;
+  font-size: 30px;
+}
+
+.savedDialog h2 {
+  margin: 12px 0;
+  font-size: 26px;
+}
+
+.savedDescription {
+  margin: 0;
+  color: #c4cec5;
+  line-height: 1.7;
+}
+
+.savedActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.savedOkButton,
+.savedDiaryButton {
+  flex: 1 1 120px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.savedOkButton {
+  border: 1px solid rgba(168, 195, 154, 0.5);
+  background: transparent;
+  color: #f3efe5;
+}
+
+.savedDiaryButton {
+  border: 1px solid #e6c56e;
+  background: #e6c56e;
+  color: #122b20;
+}
+
+.savedOkButton:hover,
+.savedDiaryButton:hover {
+  filter: brightness(1.1);
+}
+
+.savedOkButton:focus-visible,
+.savedDiaryButton:focus-visible {
+  outline: 2px solid #f3efe5;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .savedDialog {
+    padding: 24px;
+  }
+
+  .savedDialog h2 {
+    font-size: 23px;
+  }
+}
